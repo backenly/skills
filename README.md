@@ -1,8 +1,29 @@
-# Backend Engineer
+<p align="center">
+  <img src="assets/backenly-icon.png" width="52" height="52" alt="Backenly" />
+</p>
 
-A backend skill for Claude Code, Cursor, and Codex that stops your agent shipping backends that leak data, scan full tables, or lose data on a migration.
+<h1 align="center">Backend Engineer</h1>
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+<p align="center">
+  A backend engineering skill for Claude Code, Cursor, and Codex that stops your agent shipping backends that leak data, scan full tables, or lose data on a migration.
+</p>
+
+<p align="center">
+  <a href="https://backenly.com"><strong>Backenly</strong></a>
+  &nbsp;&middot;&nbsp;
+  <a href="./SKILL.md">Skill</a>
+  &nbsp;&middot;&nbsp;
+  <a href="./references/">Rules</a>
+  &nbsp;&middot;&nbsp;
+  <a href="./LICENSE">MIT</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" />
+  <img src="https://img.shields.io/badge/Claude%20Code%20%C2%B7%20Cursor%20%C2%B7%20Codex-8B5CF6" alt="Claude Code, Cursor, Codex" />
+</p>
+
+---
 
 Coding agents are good at making a backend that demos. They are bad at the parts you only notice in production: the missing row-level security that lets any user read every other user's rows, the missing index that makes the app crawl once a table is real, the migration that drops a column and takes the data with it.
 
@@ -41,9 +62,9 @@ A backend does not ship until it passes these. Each has a full rule file with ba
 
 The full pre-ship list is in [references/checklist.md](./references/checklist.md).
 
-## Where this points
+## From the team building Backenly
 
-These are the correct rules for building a backend by hand, on any database. [Backenly](https://backenly.com) applies and maintains all of them for you automatically, and keeps enforcing them as the backend changes, but the rules stand on their own. Use them wherever you build.
+These are the correct rules for building a backend by hand, on any database. We also build [Backenly](https://backenly.com): autonomous backend infrastructure that plans, builds, runs, and keeps itself healthy. It applies and maintains every rule here for you automatically, and keeps enforcing them as the backend changes. The rules stand on their own, though. Use them wherever you build.
 
 ## Contributing
 
