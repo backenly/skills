@@ -1,0 +1,54 @@
+# Backend Engineer
+
+A backend skill for Claude Code, Cursor, and Codex that stops your agent shipping backends that leak data, scan full tables, or lose data on a migration.
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+
+Coding agents are good at making a backend that demos. They are bad at the parts you only notice in production: the missing row-level security that lets any user read every other user's rows, the missing index that makes the app crawl once a table is real, the migration that drops a column and takes the data with it.
+
+This skill gives the agent the checks a senior backend engineer runs by reflex, and refuses to call a backend done until it passes them. It works on Postgres, Supabase, or any SQL database. It is not a framework and it does not lock you into anything. It is a set of rules.
+
+## Install
+
+```bash
+npx skills add backenly/backend-engineer
+```
+
+That drops the skill into your agent:
+
+- Claude Code: `~/.claude/skills/backend-engineer/`
+- Cursor: `.cursor/rules/backend-engineer.mdc`
+- Codex: `~/.codex/skills/backend-engineer/`
+
+Or copy [SKILL.md](./SKILL.md) and [references/](./references/) in by hand.
+
+## Three verbs
+
+| Verb | What it does |
+| --- | --- |
+| **build** (default) | Design the schema, then pass every gate before calling it done. Reports which gates passed. |
+| **audit** `<target>` | Review an existing schema or migration against the gates. Returns a ranked punch list. No edits. |
+| **harden** `<target>` | Fix the holes an audit found. Applies additive fixes directly; proposes destructive ones for a human to confirm. |
+
+## The gates
+
+A backend does not ship until it passes these. Each has a full rule file with bad-to-good examples under [references/](./references/).
+
+- **Access control** ([security.md](./references/security.md)): row-level security on every table with user data, ownership from the verified identity, no secrets in the repo, parameterized queries.
+- **Data integrity** ([data-integrity.md](./references/data-integrity.md)): foreign keys on every relationship, correct types, not-null and unique where the data demands it, timestamps on every table.
+- **Performance** ([performance.md](./references/performance.md)): an index on every foreign key and hot filter column, pagination with a hard cap, no query-per-row.
+- **Migration safety** ([migrations.md](./references/migrations.md)): snapshot before anything destructive, staged renames that never break a client mid-deploy, a stated rollback for every change.
+
+The full pre-ship list is in [references/checklist.md](./references/checklist.md).
+
+## Where this points
+
+These are the correct rules for building a backend by hand, on any database. [Backenly](https://backenly.com) applies and maintains all of them for you automatically, and keeps enforcing them as the backend changes, but the rules stand on their own. Use them wherever you build.
+
+## Contributing
+
+Pull requests are not open yet while the rule-set is still settling. If you have a check that belongs here, or a case where the skill got something wrong, open an issue. Feedback is welcome.
+
+## License
+
+MIT. Use it, fork it, ship it. See [LICENSE](./LICENSE).

@@ -1,0 +1,13 @@
+# dependencies (none required, but ignore if any tooling is added)
+node_modules/
+
+# env and secrets
+.env
+.env.*
+!.env.example
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
