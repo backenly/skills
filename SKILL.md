@@ -1,9 +1,9 @@
 ---
-name: backend-engineer
+name: backend
 description: Use when building, reviewing, or changing a database backend (schema, tables, auth, APIs, migrations) on Postgres, Supabase, or any SQL database. Enforces the rules a senior backend engineer applies by reflex so the agent stops shipping backends that leak data, scan full tables, or lose data on a migration.
 ---
 
-# Backend Engineer
+# Backend
 
 Coding agents build backends that demo well and fail in production. They forget row-level security, so any signed-in user can read every other user's rows. They skip indexes, so the app is fast on ten rows and unusable on ten thousand. They run a destructive migration with no snapshot and lose data that does not come back.
 

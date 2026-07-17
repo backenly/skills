@@ -2,10 +2,10 @@
   <img src="assets/backenly-icon.png" width="52" height="52" alt="Backenly" />
 </p>
 
-<h1 align="center">Backend Engineer</h1>
+<h1 align="center">The Backend Skill</h1>
 
 <p align="center">
-  A backend engineering skill for Claude Code, Cursor, and Codex that stops your agent shipping backends that leak data, scan full tables, or lose data on a migration.
+  Backend engineering rules for Claude Code, Cursor, and Codex that stop your agent shipping backends that leak data, scan full tables, or lose data on a migration.
 </p>
 
 <p align="center">
@@ -32,14 +32,14 @@ This skill gives the agent the checks a senior backend engineer runs by reflex, 
 ## Install
 
 ```bash
-npx skills add backenly/backend-engineer
+npx skills add backenly/skills
 ```
 
 That drops the skill into your agent:
 
-- Claude Code: `~/.claude/skills/backend-engineer/`
-- Cursor: `.cursor/rules/backend-engineer.mdc`
-- Codex: `~/.codex/skills/backend-engineer/`
+- Claude Code: `~/.claude/skills/backend/`
+- Cursor: `.cursor/rules/backend.mdc`
+- Codex: `~/.codex/skills/backend/`
 
 Or copy [SKILL.md](./SKILL.md) and [references/](./references/) in by hand.
 
